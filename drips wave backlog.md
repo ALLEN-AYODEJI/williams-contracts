@@ -1,5 +1,8 @@
 # SoroWill (Williams) — Drips Wave GitHub Issue Backlog
 
+Publication complete: **zero unpublished issue drafts remain**. All 79 eligible drafts have verified GitHub mappings in [publication report](github-issue-publication-report.md); duplicate ISSUE-122 was consolidated into ISSUE-064. Earlier investigation counts below are historical.
+
+
 **Repository:** `williams-contracts`  
 **Protocol:** SoroWill (Williams Trustless Inheritance Protocol for Stellar Soroban)  
 **Contract Package:** `contracts/will` (v1.3.0, `CONTRACT_VERSION = 1_003_000`)  
@@ -259,4 +262,143 @@ Each issue is assigned a Drips Wave point tier matching `.github/ISSUE_TEMPLATE`
 4. **Conservation of Balance:** The sum of all beneficiary payouts, refunds, and keeper bounties must equal total custodied token balances across all held tokens.
 
 *Backlog reconciliation completed: Exactly 129 proposals published on GitHub (#1–#129) across Waves 1, 2, and 3.*
+
+
+
+---
+
+# Local review supplement — 2026-11-16
+
+This supplement supersedes the legacy publication/status assertions above for this review only. All earlier content is preserved verbatim. The preceding label proposals and historical rankings are not the taxonomy used by these new local drafts.
+
+
+
+
+
+Continuation complete: exactly 100 investigation drafts are saved (ISSUE-001–ISSUE-100), including the retained first 28 and 72 additions (ISSUE-029–ISSUE-100). The current totals below supersede the earlier partial review result.
+
+Publication reconciliation (2026-11-16): **50 of the original 100 drafts are published and removed; exactly 50 remain**, with original IDs preserved. See [publication report](github-issue-publication-report.md) and [verification journal](github-issue-publication-report.json). Original investigation totals below are historical.
+
+
+Current retained draft total: **0**. All 79 eligible drafts were verified on GitHub and removed locally; ISSUE-122 was consolidated into the published ISSUE-064. See the separate publication report for history.
+
+## Review record (separate from drafts)
+
+- Reviewed checkout: `3210249c79d425b56842a555e77edbf86cdd638f`, branch `main`, remote `https://github.com/willi-d7/williams-contracts`. HEAD is not tagged. The worktree was clean at the start. No applicable AGENTS.md was found in the workspace, its parent tree, or ancestor locations `/workspaces/AGENTS.md` and `/AGENTS.md`.
+- Destination: existing tracked file `drips wave backlog.md`; no alternate matching destination was found. Existing content was retained byte for byte as a prefix. Existing identifiers use historical `Issue N`; new drafts use `ISSUE-001` through `ISSUE-100` without collisions.
+- Result: **100 new source-verified drafts**, **P0: 0 / P1: 11 / P2: 54 / P3: 35**. The retained first 28 plus 72 additions meet the 100-draft completion requirement; pre-investigation entries, index rows and review notes are excluded. No proposed behavior changes were implemented. “Verified” here means implementation evidence/path/symbol verification, not successful Rust execution. Hypothesized runtime reproductions are explicitly testing requirements; the arithmetic and shell traces below were executed locally.
+- Priority is local metadata: GitHub exposes no priority labels. No component labels exist in the retrieved list; drafts use only the verified applicable type labels `bug`, `enhancement`, and `documentation`. The repository templates primarily encode contributor reward categories incompatible with this request, so these drafts use the supplied Problem/Context/Impact/Direction/Acceptance/Testing/Files/References/Dependencies format.
+- Instructions/reference coverage: README.md, CONTRIBUTING.md, SECURITY.md; all four issue-template files; three architecture ADRs; migration/type/storage docs; spec/README.md and both JSON snapshots; events, error codes, fuzzing, WASM and resource-cost documentation; existing security review retained as audit evidence. Security findings remain local, consistent with SECURITY.md.
+- Implementation coverage: inventoried 136 Rust files and 59 public contract entrypoints. Traced creation/confirmation/refund, check-in/delegates/batches, trigger/recovery/extension/cancellation, both release routes, visible/hashed distributions, failed payouts/retries/redirection, guardian permissions/consents/weights/votes, merge/split/clone, archival/migration, indexes/history/statistics and TTL helpers. Inspected targeted regression fixtures, event helpers, authorization/state-machine/property suites, all seven fuzz frontends and their manifests, dependencies/lockfile configuration, three workflows, nine shell scripts and task recipes. This is a source review with targeted test inspection, not a claim to have executed or proven all tests or resource limits.
+- GitHub read-only coverage: REST `issues?state=all&per_page=100` pages 1–2 returned all 173 records: 129 issues (3 open, 126 closed) and 44 PRs. Separate paginated labels and PR listings returned 11 labels and 44 PRs (43 merged). Screened the title/body corpus against candidate findings, then inspected related issue bodies, comments and PR patches. The connected GitHub tool retrieved 498 comments across all 129 issue threads and fetched metadata/diffs for all 44 PRs; selected patches were examined around the affected changes. Closed/open state was not used as proof of resolution.
+- GitHub access limitation and recovery: the generic fetch connector rejected an API URL; direct read-only REST requests retrieved lists but anonymous comment requests reached HTTP 403 rate limiting. The dedicated issue-comment/PR connector then succeeded, so the rate limit did not prevent reviewing the issue comments. PR review-thread exhaustiveness and external linked repositories were not independently audited.
+
+### Continuation review and verification
+
+The continuation rechecked the first 28 drafts and retained them unchanged. It added ISSUE-029–ISSUE-100 in saved batches covering contract state/accounting, test infrastructure, build/CI/scripts, and documentation/diagnostics. No further source cleanup or proposed fixes were implemented. The two modified tracked files remain the backlog and the earlier uncalled-helper deletion.
+
+GitHub was rechecked read-only through the connected search tool: descending and ascending 100-result issue searches yielded 129 unique issues (#1–#129), with all titles/bodies identical to the earlier paginated REST corpus. The current PR search returned 44 PRs through #173. Repository metadata and PRs #149/#155/#159/#161/#173 were refreshed through the connector. The earlier 498-comment/44-PR record remains the basis for detailed related-work review. Anonymous REST refresh attempts remained rate-limited; this did not prevent connector issue/PR refresh. Labels/descriptions use the actual 11-label inventory retrieved earlier in this same investigation; no labels were created or applied.
+
+Source checks confirmed the fixed-total saturation example (`MAX + 1` becomes `MAX`), the 10008-bps merge apportionment example, missing declared schema target, ignored new regression path, and the silent extra export arguments. These are source/arithmetic checks, not Soroban runtime executions. Nine shell syntax checks, version/changelog scripts, backlog validation and `git diff --check` pass. The existing arithmetic guard still fails and the workflow still references its missing alternative path. Cargo/rustc, Stellar CLI and ShellCheck remain unavailable, so native/WASM/fuzz/resource/audit execution remains unverified.
+
+Final overlap review compared all 100 draft titles/scopes with each other, the pre-investigation catalog and the refreshed 129 issue bodies/44 PR corpus. Related references distinguish feature introductions from omitted integrations, historical defects from new conditions, and implementation changes from independently useful documentation or validation work. A candidate about SDK clients borrowing local environments was discarded after checking generated-client code that clones Env; it is not part of the 100. ISSUE-068 instead records a verified absent memory measurement/assertion. The earlier global triggered-index sharding candidate remains excluded under published #45/#112.
+
+All 100 drafts include the requested nine sections, concrete acceptance criteria, implementation evidence, file/symbol references, validation methods and dependencies. The final run verified 337 rendered file/line references and 337 source symbol/text references, exactly 100 draft headings, and exactly 100 index rows. The final validator verifies unique headings/anchors, exact 100 index rows, allowed label membership, priority totals, real file/symbol/line references, valid local dependencies and GitHub reference numbers, and absence of prohibited labels or additional ranking metadata. First-28 draft content and the pre-investigation byte prefix are checked separately for preservation. Quantitative resource ceilings and runtime behavior still require the tests specified in each relevant draft; source review is not a claim those tests passed.
+
+### Conservative cleanup
+
+Removed only the unused private `grace_period_end` helper and its attached docs/dead-code allowance from contracts/will/src/lib.rs (22 lines). Repository-wide search found no invocation or export; the only non-definition mentions were explanatory historical comments and differently named event variables. The active `grace_deadline` helper and all callers remain intact. No interface, storage type, permission, financial calculation, fixture, dependency, migration, generated input or audit evidence was changed. The removed helper is not counted as an outstanding issue. Rust execution cannot confirm equivalence here; non-use was established by source/module/export search.
+
+### Baseline and post-cleanup checks
+
+| Command/check | Baseline | Post-cleanup / interpretation |
+| --- | --- | --- |
+| `cargo fmt --all -- --check` | exit 127: Cargo absent | Same blocker; formatting not verified |
+| `cargo clippy --all-targets -- -D warnings` | exit 127: Cargo absent | Same blocker; lint cleanliness not claimed |
+| `cargo test --workspace` | exit 127: Cargo absent | Same blocker; no test-pass count available |
+| `cargo build --workspace --release --target wasm32v1-none` | exit 127: Cargo absent | Same blocker; no WASM produced |
+| `bash scripts/check-wasm-size.sh` | exit 127 at Cargo | Same blocker; size not measured |
+| `bash scripts/export-spec.sh --check` | exit 127 at Cargo | Same blocker; additional undefined exporter reproduced with isolated stubs |
+| `bash scripts/check_resource_costs.sh` | exit 127 at Cargo | Same blocker; no profile generated |
+| `cargo audit`, `cargo deny check` | exit 127: Cargo absent | Same blocker; dependency security/license results unknown |
+| `shellcheck scripts/*.sh` | exit 127: ShellCheck absent | Same blocker |
+| `bash -n` on all 9 tracked shell scripts | all pass | all pass |
+| `bash .github/scripts/check-contract-version.sh` | pass: 1.3.0 matches crate; untagged HEAD | pass, same result |
+| `bash .github/scripts/check-changelog.sh` | pass | pass; cleanup changes no version constant |
+| CI's `bash scripts/lint-checked-arithmetic.sh` | exit 127: referenced file absent | same pre-existing failure; related existing #120 |
+| `bash .github/scripts/check-unchecked-arithmetic.sh` | exit 1 | exit 1; same flagged text after adjusting line offsets, including test arithmetic and production confirmation/cooldown arithmetic |
+| Independent Python arithmetic/set/cursor traces | not a Rust check | 5 pass: 200/320/480 reserve split; -500 aggregate; i128 intermediate bound; 19-token merge union; [2,1] cursor omission |
+| Isolated shell dependency stubs | not a network check | Spec export exit 127 (`export_spec` absent); deploy verification exit 1 (`LOCAL_WASM_HASH` unset); GET-rejecting RPC simulation fails readiness as expected |
+| `git diff --check` | clean starting worktree | pass after removing added Markdown trailing whitespace |
+| Backlog structure/evidence validation | no new drafts yet | count/IDs/anchors/sections, path+symbol presence, line bounds, labels, dependency targets and prohibited metadata checked after rendering |
+
+Rust/rustc/Cargo, Stellar CLI and ShellCheck are absent; Docker is installed but was not invoked. No toolchain was installed. The stubs ran in a temporary copy with fake Cargo/Stellar/Docker/curl/sleep executables; no live deployment, container, identity, or network transaction occurred. The shell outcomes demonstrate control-flow failures, not successful Soroban execution. Source-visible undefined cooldown names and event arity mismatches are pre-existing; they were not introduced by deleting an uncalled helper.
+
+### Existing coverage excluded from the new draft count
+
+These examples remain related work or unresolved existing reports; they were deliberately not republished as new local issues. This is not a complete re-triage of every published proposal.
+
+| Existing reference | Current checkout evidence / disposition |
+| --- | --- |
+| [#14](https://github.com/willi-d7/williams-contracts/issues/14) | Current recovery uses `>` and release uses `<=`, making the boundary disjoint with owner precedence. Later PR #143 explicitly chose that precedence. Do not assume the older issue's proposed opposite precedence remains the requirement. |
+| [#16](https://github.com/willi-d7/williams-contracts/issues/16) | Raw confirmation/cooldown arithmetic still present; retain as existing arithmetic work. |
+| [#26](https://github.com/willi-d7/williams-contracts/issues/26) | Older issue_357_test remains commented; do not count that known disabled module again. ISSUE-028 concerns seven newly omitted files. |
+| [#29](https://github.com/willi-d7/williams-contracts/issues/29), [#49](https://github.com/willi-d7/williams-contracts/issues/49) | v1.3.0 snapshot exists and CI freshness job exists; newer entrypoints/fields still need spec reconciliation. ISSUE-019 is specifically the undefined exporter command. |
+| [#39](https://github.com/willi-d7/williams-contracts/issues/39), [#72](https://github.com/willi-d7/williams-contracts/issues/72) | Unsupported token semantics are not newly reported as defects. Failed-payout behavior reviewed separately. |
+| [#41](https://github.com/willi-d7/williams-contracts/issues/41), [#126](https://github.com/willi-d7/williams-contracts/issues/126) | TTL/index-refresh work already covered; no generic duplicate TTL issue added. |
+| [#61](https://github.com/willi-d7/williams-contracts/issues/61), [#62](https://github.com/willi-d7/williams-contracts/issues/62) | New fuzz frontends reference obsolete interfaces/targets and fuzz/Cargo.toml lacks their direct SDK dependency. Preserve as incomplete existing fuzz work rather than new target requests. |
+| [#63](https://github.com/willi-d7/williams-contracts/issues/63) | release_inheritance still never authenticates the supplied bounty caller; already reported. |
+| [#64](https://github.com/willi-d7/williams-contracts/issues/64) | Batch creation still lacks the requested cumulative preflight capacity check; already reported. |
+| [#65](https://github.com/willi-d7/williams-contracts/issues/65), [#66](https://github.com/willi-d7/williams-contracts/issues/66) | Fixed amounts remain primary-token amounts; bounty/reserve deduction still precedes fixed payouts. Existing proposals already cover these changes. |
+| [#71](https://github.com/willi-d7/williams-contracts/issues/71) | set_failed_payout still overwrites an existing tuple rather than accumulating. Redirection collisions share this underlying problem; not split into a new issue. |
+| [#77](https://github.com/willi-d7/williams-contracts/issues/77), [#82](https://github.com/willi-d7/williams-contracts/issues/82), [#83](https://github.com/willi-d7/williams-contracts/issues/83), [#84](https://github.com/willi-d7/williams-contracts/issues/84), [#90](https://github.com/willi-d7/williams-contracts/issues/90) | Several previously reported status scans, error-policy differences, redundant summed validation, negative deadline policy and settings period checks still appear. Their closure is not treated as proof of correction. |
+| [#95](https://github.com/willi-d7/williams-contracts/issues/95)–[#100](https://github.com/willi-d7/williams-contracts/issues/100) | PR descriptions claim additional guardian entrypoints/configuration; current public-entrypoint inventory does not contain those additions. Treat as existing feature reconciliation, not six new drafts. |
+| [#102](https://github.com/willi-d7/williams-contracts/issues/102) | Maximum is checked per request but cumulative grace_extension_days uses saturating_add without a cumulative cap. Existing maximum-limit acceptance already covers this; new drafts address different lifecycle/consumer/schema gaps. |
+| [#108](https://github.com/willi-d7/williams-contracts/issues/108) | Batch retry uses panicking transfer, so a failing entry rolls back the batch instead of retaining partial progress. Existing acceptance already covers retaining failed records; not counted again. |
+| [#45](https://github.com/willi-d7/williams-contracts/issues/45), [#112](https://github.com/willi-d7/williams-contracts/issues/112) | Full-vector pagination and global triggered-index scalability are existing work. A proposed sharding draft was removed during the final overlap review. |
+| [#111](https://github.com/willi-d7/williams-contracts/issues/111), [#115](https://github.com/willi-d7/williams-contracts/issues/115) | History pruning/terminal auxiliary-key work is already tracked. No deletion of retained payouts/history evidence was done. |
+| [#120](https://github.com/willi-d7/williams-contracts/issues/120) | Workflow invokes a nonexistent arithmetic-lint path; the existing script also flags fixture arithmetic. Reconcile under the published lint issue. |
+| [#124](https://github.com/willi-d7/williams-contracts/issues/124) | Deploy script hashes into WASM_HASH then compares undefined LOCAL_WASM_HASH; isolated stubs reproduce unbound-variable failure. This directly overlaps the existing hash-verification acceptance, so excluded. |
+| [#129](https://github.com/willi-d7/williams-contracts/issues/129) | Future-version policy remains existing work; new decoder drafts concern historical layout compatibility and bypassed reads. |
+
+Intentional behavior was not automatically classified as a defect: final visible dust allocation, fixed-primary-token semantics, informational guardian reasons, recipient/owner payout redirection authority, index-only owner portfolio migration and unsupported direct transfers were assessed against their documented contracts. In particular, ISSUE-013 requests an explicit multi-token merge compatibility policy as an improvement; it does not claim the documented scalar policy is accidental.
+
+### Retrieved GitHub label inventory
+
+Descriptions below are the actual read-only API values, not labels proposed by this supplement. Only applicable type labels are selected on new drafts; no grouping label is assigned.
+
+| Existing label | Actual description |
+| --- | --- |
+| `accessibility` | Barrier affecting people with disabilities |
+| `bug` | Something isn't working |
+| `documentation` | Improvements or additions to documentation |
+| `duplicate` | This issue or pull request already exists |
+| `enhancement` | New feature or request |
+| `good first issue` | Good for newcomers |
+| `help wanted` | Extra attention is needed |
+| `invalid` | This doesn't seem right |
+| `question` | Further information is requested |
+| `Stellar Wave` | Issues in the Stellar wave program |
+| `wontfix` | This will not be worked on |
+
+### Draft index
+
+No unpublished drafts remain. Publication history is in the separate reports.
+
+| Draft | Title | Priority | Labels | Link |
+| --- | --- | --- | --- | --- |
+
+### Validation and remaining uncertainty
+
+All Rust execution described below requires supplying the Rust toolchain and resolving build blockers including ISSUE-001, ISSUE-002, ISSUE-029 and ISSUE-030, plus the pre-existing test/profile issues. No successful build is implied by resolving any one draft alone. Per-draft dependencies identify additional implementation prerequisites beyond that common execution constraint.
+
+The validator checks the new section separately from the untouched historical backlog. All draft IDs, titles and anchors are unique; every selected label exists in the retrieved inventory; referenced local files and symbols/text exist, and rendered line numbers are taken from the post-cleanup tree. Local dependency IDs and cited GitHub issue/PR numbers resolve in the reviewed corpus. Every draft has all requested sections and concrete acceptance/testing requirements. Manual overlap review against the legacy publication catalog and all published issue titles/bodies excluded the existing findings above; each retained related draft explains its narrower or different gap. No selected label is a grouping or contributor-ranking label, and no estimates or additional ranking fields were added.
+
+The 100 drafts are not a security audit certification. Rust execution, compiled-WASM/spec comparison, resource-threshold measurement, fuzz runs and CI execution remain unverified. Resource-bound drafts explicitly require measurement and avoid invented failure thresholds. No issue is counted as resolved by the cleanup. No claims are made about deployed contract state or secret material. Exactly 100 independently scoped drafts are present; no shortfall remains. Improvements are distinguished from confirmed source defects and are ranked only by priority.
+
+All modifications are local and unstaged. No commit, push, issue publication, PR creation, comment, label modification, deployment, network transaction, signature, authorship change or co-author trailer was made.
+
+---
+
+# New local issue drafts
 
